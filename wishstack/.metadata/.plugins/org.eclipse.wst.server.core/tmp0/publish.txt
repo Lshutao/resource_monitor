@@ -1,0 +1,8 @@
+#Tomcat publish data
+#Tue May 03 17:17:38 CST 2016
+org.eclipse.jst.j2ee.server\:wishstack-domain=WEB-INF/lib/wishstack-domain-1.0.jar
+org.eclipse.jst.j2ee.server\:wishstack-service=WEB-INF/lib/wishstack-service-1.0.jar
+org.eclipse.jst.j2ee.server\:wishstack-rpc=WEB-INF/lib/wishstack-rpc-1.0.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\lst\\.m2\\repository\\org\\springframework\\spring-web\\3.2.2.RELEASE\\spring-web-3.2.2.RELEASE.jar=WEB-INF/lib/spring-web-3.2.2.RELEASE.jar
+org.eclipse.jst.j2ee.server\:wishstack-dao=WEB-INF/lib/wishstack-dao-1.0.jar
+org.eclipse.jst.j2ee.server\:wishstack-common=WEB-INF/lib/wishstack-common-1.0.jar

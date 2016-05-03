@@ -1,0 +1,23 @@
+#set($layout="layout/nolayout.vm") 
+<DIV id="navBar" title="仪表盘">
+	<li><a href="#springUrl('')/">首页</a></li>
+</DIV>
+<table class="table table-striped table-bordered table-condensed table-hover grid">
+ 	<thead>
+ 		<tr>
+ 			<th class="w100">编号</th>
+ 			<th>表名</th>
+ 			<th class="w200">操作</th>
+ 		</tr>
+ 	</thead>
+ 	<tbody>
+		<tr>
+ 			<td>1</td>
+ 			<td>UserDemo</td>
+ 			<td class="textC">
+ 				<a class="btn btn-small btn-info" onclick="XUI.gotoPage('/userDemo')">查看详情(ajax方式)</a>
+ 				<a class="btn btn-small btn-info" onclick="XUI.gotoPageHref('/userDemo/layout')">查看详情(href方式)</a>
+ 			</td>
+ 		</tr>
+ 	</tbody>
+</table>

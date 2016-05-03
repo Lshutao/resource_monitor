@@ -10,7 +10,7 @@
 		<li><a href="$!{contextPath}/purview">权限管理</a></li>
 		<li class="active"><a href="$!{contextPath}/role">角色管理</a></li>
 		<li><a href="$!{contextPath}/user">用户管理</a></li>
-		<li><a href="$!{contextPath}/dept">组织结构</a></li>
+		<li><a href="$!{contextPath}/dept">单位管理</a></li>
 	</ul>
 	
 	<a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-cog"></i>系统设置</a>
