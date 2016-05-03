@@ -1,0 +1,19 @@
+<div class="content">
+	<div class="header">
+		<div class="header-info">
+			<span id="serverDate" class="label" data-serverTime="1434444234472">2015-06-16 16:43:54</span>
+		</div>
+		<h1 class="page-title">&nbsp;</h1>
+	</div>
+	<ul class="breadcrumb">&nbsp;</ul>
+	<div class="container-fluid">
+		<div id="vmContainer" class="row-fluid">
+						$screen_content
+		</div>
+		<footer>
+			<hr>
+			&copy; 2015 <a href="http://wish.com" target="_blank">wish.com</a>
+			<p class="pull-right"><span>Design by wish.com<a></a></span></p>
+		</footer>
+	</div>
+</div>

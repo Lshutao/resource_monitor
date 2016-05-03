@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.wish</groupId>
+        <artifactId>wishstack</artifactId>
+        <version>1.0</version>
+    </parent>
+    
+    <artifactId>wishstack-service</artifactId>
+    <packaging>jar</packaging>
+    <name>wishstack-service</name>
+    
+    <dependencies>
+        <dependency>
+        	<groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+		<dependency>
+            <groupId>com.wish</groupId>
+            <artifactId>wishstack-domain</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+			<groupId>com.wish</groupId>
+			<artifactId>wishstack-common</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.wish</groupId>
+			<artifactId>wishstack-dao</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+    </dependencies>
+</project>
