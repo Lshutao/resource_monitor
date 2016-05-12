@@ -1,5 +1,5 @@
 #Tomcat publish data
-#Tue May 03 17:17:38 CST 2016
+#Thu May 12 18:54:25 CST 2016
 org.eclipse.jst.j2ee.server\:wishstack-domain=WEB-INF/lib/wishstack-domain-1.0.jar
 org.eclipse.jst.j2ee.server\:wishstack-service=WEB-INF/lib/wishstack-service-1.0.jar
 org.eclipse.jst.j2ee.server\:wishstack-rpc=WEB-INF/lib/wishstack-rpc-1.0.jar

@@ -1,5 +1,3 @@
-
-
 Namespace.register("XUI.page");
 (function(){
 	XUI.page.serverDate = function() {

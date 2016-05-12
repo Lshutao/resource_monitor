@@ -38,7 +38,7 @@ a{cursor: pointer;}
 /*复写bootstrap样式*/
 .modal-backdrop, .modal-backdrop.fade.in {opacity: 0.2;filter: alpha(opacity=20);}
 .modal.fade.in {top:20%;}
-.btn-mini{font-size: 12px !important;}
+.btn-mini{font-size: 14px ;}
 FORM.well{padding: 8px;margin: 0px 0px 10px !important;}
 .alert {margin-bottom: 10px !important;}
 .window >.modal-header{padding: 10px;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;-webkit-border-radius: 5px 5px 0px 0px;-moz-border-radius: 5px 5px 0px 0px;border-radius: 5px 5px 0px 0px;}
@@ -66,5 +66,89 @@ TABLE.formLayout TD:nth-of-type(odd){min-width: 80px;}
 TABLE.formLayout TD:nth-of-type(even){min-width: 200px;}
 TABLE.formLayout TD>*{margin-bottom: 0px;}
 INPUT.error,SELECT.error ,TEXTAREA.error {color: #b94a48;border-color: #b94a48;}
-
-*{font-family:"lucida Grande",Verdana,Arial,Helvetica,Sans-serif,"\u5b8b\u4f53";font-size:13px;-webkit-text-size-adjust:none;outline: none;}
+ 
+*{
+	font-family:"Microsoft YaHei","lucida Grande",Verdana,Arial,Helvetica,Sans-serif,"\u5b8b\u4f53";
+	font-size:14px;
+	-webkit-text-size-adjust:none;
+	outline: none;
+}
+html,body{
+	height:100%;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {    
+    margin:0;   
+    padding:0;  
+} 
+a,a:hover,a:visited,a:link,a:active {
+	text-decoration:none;
+}
+table {  
+    border-collapse:collapse;   
+    border-spacing:0;   
+} 
+fieldset,img {    
+    border:0;   
+} 
+address,caption,cite,code,dfn,em,strong,th,var {  
+    font-style:normal;   
+    font-weight:normal;   
+} 
+ol,ul {  
+    list-style:none;   
+} 
+caption,th {  
+    text-align:left;   
+} 
+h1,h2,h3,h4,h5,h6 {  
+    font-size:100%;   
+    font-weight:normal;   
+} 
+q:before,q:after {  
+    content:'';   
+} 
+abbr,acronym { 
+    border:0;   
+}
+input, button, select, textarea{
+	font-family:"Microsoft YaHei","lucida Grande",Verdana,Arial,Helvetica,Sans-serif,"\u5b8b\u4f53";
+}
+input::-webkit-input-placeholder {
+	color: #999;
+}
+input:-moz-placeholder {
+	color: #999 ;
+}
+input::-moz-placeholder {
+	color: #999 ;
+}
+input:-ms-input-placeholder {
+	color: #999; 
+} 
+select::-webkit-select-placeholder {
+	color: #999;
+}
+select:-moz-placeholder {
+	color: #999 ;
+}
+select::-moz-placeholder {
+	color: #999 ;
+}
+select:-ms-select-placeholder {
+	color: #999; 
+}
+textarea::-webkit-textarea-placeholder {
+	color: #999;
+}
+textarea:-moz-placeholder {
+	color: #999 ;
+}
+textarea::-moz-placeholder {
+	color: #999 ;
+}
+textarea:-ms-textarea-placeholder {
+	color: #999; 
+}
+textarea {
+	resize: none;
+}

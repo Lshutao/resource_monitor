@@ -1,0 +1,46 @@
+
+5月 12, 2016 13:16:37.80 NEW SESSION
+5月 12, 2016 13:16:37.80 1463030197806	addons.update-checker	WARN	Update manifest for dict@www.youdao.com did not contain an updates property
+5月 12, 2016 13:16:38.27 1463030198273	addons.update-checker	WARN	Update manifest for firefox@getpocket.com did not contain an updates property
+5月 12, 2016 13:16:38.28 1463030198286	addons.update-checker	WARN	Update manifest for e10srollout@mozilla.org did not contain an updates property
+5月 12, 2016 13:16:38.44 1463030198442	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+5月 12, 2016 17:13:54.02 console.warn: Asynchronous operation was aborted as selection changed.
+5月 12, 2016 17:15:43.74 console.error: 
+5月 12, 2016 17:15:43.75   Protocol error (noSuchActor): No such actor for ID: server1.conn0.animationsActor23
+5月 12, 2016 17:15:48.11 console.warn: Asynchronous operation was aborted as selection changed.
+5月 12, 2016 17:20:55.22 console.error: 
+5月 12, 2016 17:20:55.22   Protocol error (noSuchActor): No such actor for ID: server1.conn1.animationsActor23
+5月 12, 2016 17:22:46.61 console.warn: Asynchronous operation was aborted as selection changed.
+5月 12, 2016 17:25:09.47 console.warn: Asynchronous operation was aborted as selection changed.
+5月 12, 2016 17:32:38.45 console.error: 
+5月 12, 2016 17:32:38.45   Protocol error (noSuchActor): No such actor for ID: server1.conn3.animationsActor23
+5月 12, 2016 17:32:50.80 console.warn: Asynchronous operation was aborted as selection changed.
+5月 12, 2016 18:13:37.50 console.warn: Asynchronous operation was aborted as selection changed.
+5月 12, 2016 18:17:51.72 console.error: 
+5月 12, 2016 18:17:51.72   Protocol error (noSuchActor): No such actor for ID: server1.conn5.animationsActor23
+5月 12, 2016 18:31:44.35 console.error: 
+5月 12, 2016 18:31:44.36   Protocol error (noSuchActor): No such actor for ID: server1.conn4.animationsActor23
+5月 12, 2016 18:35:22.02 console.warn: Asynchronous operation was aborted as selection changed.
+5月 12, 2016 18:39:20.47 *************************
+5月 12, 2016 18:39:20.47 A coding exception was thrown in a Promise resolution callback.
+5月 12, 2016 18:39:20.47 See https://developer.mozilla.org/Mozilla/JavaScript_code_modules/Promise.jsm/Promise
+5月 12, 2016 18:39:20.47 
+5月 12, 2016 18:39:20.48 Full message: TypeError: eventLoop is undefined
+5月 12, 2016 18:39:20.48 Full stack: ThreadActor.prototype._popThreadPause@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/script.js:548:5
+5月 12, 2016 18:39:20.48 ThreadActor.prototype.onResume/<@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/script.js:1032:7
+5月 12, 2016 18:39:20.48 Handler.prototype.process@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:933:23
+5月 12, 2016 18:39:20.49 this.PromiseWalker.walkerLoop@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:812:7
+5月 12, 2016 18:39:20.49 this.PromiseWalker.scheduleWalkerLoop/<@resource://gre/modules/Promise.jsm -> resource://gre/modules/Promise-backend.js:746:11
+5月 12, 2016 18:39:20.49 EventLoop.prototype.enter@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/script.js:349:5
+5月 12, 2016 18:39:20.49 ThreadActor.prototype._pushThreadPause@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/script.js:543:5
+5月 12, 2016 18:39:20.50 ThreadActor.prototype._pauseAndRespond@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/script.js:752:7
+5月 12, 2016 18:39:20.50 BreakpointActor<.hit@resource://gre/modules/commonjs/toolkit/loader.js -> resource://devtools/server/actors/breakpoint.js:153:12
+5月 12, 2016 18:39:20.50 login.validate_function@http://localhost:8080/wishstack-web/js/common/login_validate.js?v=1463049317538:48:4
+5月 12, 2016 18:39:20.50 login.init_function/<@http://localhost:8080/wishstack-web/js/common/login_validate.js?v=1463049317538:31:4
+5月 12, 2016 18:39:20.51 v.event.dispatch@http://localhost:8080/wishstack-web/js/common/jquery.min.js?v=1463049317538:2:38001
+5月 12, 2016 18:39:20.51 v.event.add/u@http://localhost:8080/wishstack-web/js/common/jquery.min.js?v=1463049317538:2:33899
+5月 12, 2016 18:39:20.51 
+5月 12, 2016 18:39:20.52 *************************
+5月 12, 2016 18:39:20.52 console.error: 
+5月 12, 2016 18:39:20.52   Protocol error (noSuchActor): No such actor for ID: server1.conn6.animationsActor23
+5月 12, 2016 18:39:25.15 console.warn: Asynchronous operation was aborted as selection changed.

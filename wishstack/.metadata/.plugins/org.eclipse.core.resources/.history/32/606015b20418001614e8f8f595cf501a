@@ -1,0 +1,521 @@
+/*
+  * Copyright (c) 2015 wish.com All rights reserved.
+ * 本软件源代码版权归----所有,未经许可不得任意复制与传播.
+ */
+package com.wish.wishstack.web.controller;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.crypto.hash.Md5Hash;
+import org.apache.shiro.subject.Subject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.wish.wishstack.common.Constants;
+import com.wish.wishstack.common.tools.EndecryptUtils;
+import com.wish.wishstack.common.tools.StringUtils;
+import com.wish.wishstack.domain.Message;
+import com.wish.wishstack.domain.log.Log;
+import com.wish.wishstack.domain.systemConfig.SystemConfig;
+import com.wish.wishstack.domain.user.Tenant;
+import com.wish.wishstack.domain.user.User;
+import com.wish.wishstack.service.log.LogService;
+import com.wish.wishstack.service.procedure.ProcedureService;
+import com.wish.wishstack.service.systemConfig.SystemConfigService;
+import com.wish.wishstack.service.user.TenantService;
+import com.wish.wishstack.service.user.UserService;
+import com.wish.wishstack.web.utils.WishRequestContext;
+import com.wish.wishstack.web.utils.ca.CAAuthenUtil;
+import com.wish.wishstack.web.utils.cache.UserCache;
+import com.wish.wishstack.web.utils.cache.UserCacheManager;
+import com.wish.wishstack.web.utils.usm.AuthClient;
+import com.wish.wishstack.web.utils.usm.AuthUser;
+
+import java.security.SecureRandom;
+/**
+ * 登录控制器
+ * 
+ * @ClassName: LoginController
+ * @Description: TODO
+ * @author zm
+ * @date 2015年11月3日 下午1:50:38
+ */
+@Controller
+public class LoginController {
+	private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
+	@Resource
+	private UserService userService;
+	@Resource
+	private TenantService tenantService;
+	@Resource
+	private LogService logService;
+	@Resource
+	private UserCacheManager userCacheManager;
+	@Resource
+	private UserCache userCache;
+	@Resource
+	private ProcedureService procedureService;
+	@Resource
+	private SystemConfigService systemConfigService;
+
+	// 安全运维系统登录/注销url
+	@Value("#{settings['url']}")
+	private String url;
+
+	// 非法登录清除时间
+	@Value("#{settings['illegalLoginTimeout']}")
+	private Long illegalLoginTimeout;
+
+	// CA认证登录验证url
+	@Value("#{settings['authURL']}")
+	private String authURL;
+
+	// CA认证登录标识
+	@Value("#{settings['appId']}")
+	private String appId;
+
+	// CA认证属性列表项
+	@Value("#{settings['attrType']}")
+	private String attrType;
+
+	/**
+	 * 登录后，每次用户提交请求前，先验证当前对话的用户是否过期
+	 */
+	@RequestMapping(value = "/user_identify", method = { RequestMethod.POST })
+	public @ResponseBody Message userIdentify(String username, HttpServletRequest request, Model view) {
+		Message msg = Message.failure();
+		try {
+			User user = userCache.getUserInCache(request);
+			if (user != null && StringUtils.hasLength(username)) {
+				if (username.equals(user.getUsername())) {
+					msg = Message.success();
+				}
+			}
+		} catch (Exception e) {
+			LOGGER.error("验证当前对话用户是否过期失败： " + e.getMessage(), e);
+		}
+		return msg;
+
+	}
+
+	/**
+	 * CA认证产生认证原文
+	 */
+	private void random(HttpServletRequest request, HttpServletResponse response) {
+		// 设置页面不缓存
+		response.setHeader("Pragma", "No-cache");
+		response.setHeader("Cache-Control", "no-cache");
+		response.setDateHeader("Expires", 0);
+
+		String randNum = generateRandomNum();
+		if (randNum == null || randNum.trim().equals("")) {
+			System.out.println("证书认证数据不完整！");
+			response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+			return;
+		}
+
+		/**************************
+		 * 第三步 服务端返回认证原文 *
+		 **************************/
+		// 设置认证原文到session，用于程序向后传递，通讯报文中使用
+		request.getSession().setAttribute("original_data", randNum);
+
+		// 设置认证原文到页面，给页面程序提供参数，用于产生认证请求数据包
+		request.setAttribute("original", randNum);
+
+		return;
+	}
+
+	/**
+	 * 产生认证原文
+	 */
+	private String generateRandomNum() {
+		/**************************
+		 * 第二步 服务端产生认证原文 *
+		 **************************/
+		String num = "1234567890abcdefghijklmnopqrstopqrstuvwxyz";
+		int size = 6;
+		char[] charArray = num.toCharArray();
+		StringBuffer sb = new StringBuffer();
+		for (int i = 0; i < size; i++) {
+			sb.append(charArray[((int) (Math.random() * 10000) % charArray.length)]);
+		}
+		return sb.toString();
+	}
+
+	/**
+	 * 跳转到登录界面 
+	 */
+	@RequestMapping(value = "/index", method = { RequestMethod.GET })
+	public String index(HttpServletRequest request, HttpServletResponse response, Model view, HttpSession session) {
+
+		String result = null;
+		view.addAttribute("contextPath", request.getContextPath());
+		try {
+			SystemConfig systemConfig = systemConfigService.getSystemConfig(1);
+			if (systemConfig != null) {
+				if (systemConfig.getIsVerified() != null) {
+					session.setAttribute("checkCA", String.valueOf(systemConfig.getIsVerified())); // 不进行ca验证
+				}
+				if (systemConfig.getIsMaintained() == 0) {
+					result = systemConfig.getUrl();
+					return result;
+				}
+			}
+			random(request, response);
+
+			result = "login";
+		} catch (Exception e) {
+			LOGGER.error("跳转到登录页面失败： " + e.getMessage(), e);
+		}
+		return result;
+	
+	}
+
+	/**
+	 * 注销，重返到登录界面 @Title: logout @author zm @Description: TODO @param
+	 * request @param view @return @return String @throws
+	 */
+	@RequestMapping(value = "/logout", method = { RequestMethod.GET })
+	public String logout(HttpServletRequest req, Model view) {
+		try {
+			SecurityUtils.getSubject().logout();
+			User userInCache = userCache.getUserInDB(req);
+			userInCache.setLoginState(0);
+			userService.updateUser(userInCache);
+			// 安全运维系统注销
+			String sessionId = userCacheManager.getKey(userInCache);
+			this.usmLogout(userInCache, sessionId, this.url);
+			// 清除当前线程的user缓存
+			userCacheManager.clearByRequest(req);
+			Log logging = this.logoutLogging(userInCache);
+			if (logging != null) {
+				logging.setLevel("success");
+				logService.save(logging);
+			}
+		} catch (Exception e) {
+			LOGGER.error("注销失败： " + e.getMessage(), e);
+		}
+		return "redirect:/index";
+	}
+
+	/**
+	 * @throws Exception
+	 *             证书登录 @Title: login @author zm @Description: TODO @param
+	 *             username @param password @param resp @return @return
+	 *             Message @throws
+	 */
+	@RequestMapping(value = "/login", method = { RequestMethod.POST, RequestMethod.GET }, produces = "application/json")
+	public @ResponseBody Message login(String username, String password, String signed_data, String original_jsp,
+			HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+		Message msg = Message.failure();
+		if (username == null && password == null) {
+			msg = Message.failure();
+			msg.setResult("请输入账户名和密码");
+		} else if (username == null) {
+			msg = Message.failure();
+			msg.setResult("请输入账户名");
+		} else if (password == null) {
+			msg = Message.failure();
+			msg.setResult("请输入密码");
+		} else {
+			Subject subject = SecurityUtils.getSubject();
+			try {
+				String encodedPasswod = EndecryptUtils.encrypt(password);
+				UsernamePasswordToken token = new UsernamePasswordToken(username, encodedPasswod, false);
+				subject.login(token);
+				token.clear();
+				User loginUser = (User) session.getAttribute("userSession");
+				if (loginUser != null) {
+					String returnString = null;
+
+					if (session.getAttribute("checkCA") != null && session.getAttribute("checkCA").equals("0")) {
+						if (loginUser.getCaCheck()==0) {
+
+							/************ CA登录认证 **************/
+							returnString = CAAuthenUtil.auth(req, resp, appId, authURL);
+
+							/*********** 是否插入key ***********/
+							if (!StringUtils.hasLength(returnString)) {
+								msg = Message.failure();
+								msg.setResult("请插入政务外网证书KEY");
+								subject.logout();
+								return msg;
+							} else {
+								/************ key是否绑定了该用户 **********/
+								boolean bound = false;
+								//当前用户是否与插入的key已经绑定过
+								bound = StringUtils.hasLength(loginUser.getKey()) && loginUser.getKey().equals(returnString);
+								if (!bound) {
+									// 查询该key是否已绑定了其他用户
+									int key = userService.getByKey(returnString);
+									// 绑定了其他用户
+									if (key > 0) {
+										msg = Message.failure();
+										msg.setResult("已有用户绑定了该证书");
+										subject.logout();
+										return msg;
+									}
+									//该key未被其他用户绑定过，为当前登录用户绑定key,且使账户处于未激活
+									loginUser.setKey(returnString);
+									loginUser.setEnabled(0);
+									
+									if (userService.installKey(loginUser)) {
+										msg = Message.failure();
+										msg.setResult("绑定证书成功，请联系管理员进行账号激活");
+										subject.logout();
+										return msg;
+									} else {
+										// 绑定key失败
+										msg = Message.failure();
+										msg.setResult("绑定证书失败，请重试");
+										subject.logout();
+										return msg;
+									}
+								}
+							}
+						}
+					}
+
+					/************ 用户尚未激活 ***********/
+					if (loginUser.getEnabled() == 0) {
+						msg = Message.failure();
+						msg.setResult("该用户未激活，请联系管理员激活");
+						subject.logout();
+						return msg;
+					}
+					
+					/************ 用户已经绑定key且处于激活状态 ***********/
+					Date date = new Date();
+					loginUser.setIllegalLoginCount(0); // 错误登录次数置为0
+					String ipAddress = WishRequestContext.getIpAddress();
+					loginUser.setActionTime(date);
+					loginUser.setLastLoginIp(loginUser.getLoginIp());
+					loginUser.setLoginIp(ipAddress);
+					loginUser.setLastLoginTime(loginUser.getLoginTime());
+					loginUser.setLoginTime(date);
+					//loginUser.setKey(returnString);
+					loginUser.setLoginState(1);// 登录状态： 1表示在线
+					userService.updateUser(loginUser);
+					String uuid = userCacheManager.put(loginUser); // 登录用户放入缓存
+					Cookie cookie = new Cookie(Constants.USER_IN_CACHE, uuid); // cookie生命周期为本次会话
+					cookie.setPath(req.getContextPath());
+					resp.addCookie(cookie);
+					// 插入日志
+					Log logging = this.loginLogging(loginUser);
+					if (logging != null) {
+						logging.setLevel("success"); // 登录 成功
+						logService.save(logging);
+					}
+					msg = Message.success();
+					msg.setResult("登录成功");
+				} else {
+					subject.logout();
+				}
+
+			} catch (UnknownAccountException ex) {
+				msg.setResult("无效用户");
+			} catch (IncorrectCredentialsException ex) {
+				msg.setResult("无效密码");
+			} catch (Exception e) {
+				subject.logout();
+				List<User> userEntityByUsername = userService.getUserEntityByUsername(username);
+				if (userEntityByUsername.size() > 0) {
+					User user = userEntityByUsername.get(0);
+					Log logging = this.loginLogging(user);
+					if (logging != null) {
+						logging.setLevel("failure"); // 登录失败
+						logService.save(logging);
+					}
+				}
+				msg.setResult("系统目前无法登陆");
+				LOGGER.error("登录失败：" + e.getMessage(), e);
+			}
+		}
+		return msg;
+	}
+
+
+	/**
+	 * 登录时插入日志 @Title: loginLogging @author zm @Description: TODO @param
+	 * loginUser @return void @throws
+	 */
+	private Log loginLogging(User loginUser) {
+		Log logging = null;
+		try {
+			if (loginUser != null) {
+				logging = new Log();
+				logging.setUserId(loginUser.getId()); // 用户id
+				logging.setUserName(loginUser.getUsername()); // 用户名
+				Integer tenantId = loginUser.getTenantId();
+				logging.setTenantId(tenantId); // 租户id
+				if (tenantId != null) {
+					Tenant tenant = tenantService.getEntity(tenantId);
+					if (tenant != null) {
+						logging.setTenantName(tenant.getName()); // 租户名
+					}
+				}
+				logging.setRole(loginUser.getRoleName());
+				logging.setDescription("登录门户"); // 操作的描述
+				logging.setCreatedAt(new Date()); // 操作时间
+				logging.setIp(WishRequestContext.getIpAddress()); // 操作用户的ip
+				logging.setOperateType("登录"); // 操作类型
+				logging.setOperateObject("门户"); // 操作对象
+			}
+		} catch (Exception e) {
+			LOGGER.error("插入登录日志失败： " + e.getMessage(), e);
+		}
+		return logging;
+	}
+
+	/**
+	 * 注销时插入日志 @Title: logoutLogging @author zm @Description: TODO @param
+	 * loginUser @return @return Log @throws
+	 */
+
+	private Log logoutLogging(User loginUser) {
+		Log logging = null;
+		try {
+			if (loginUser != null) {
+				logging = new Log();
+				logging.setUserId(loginUser.getId()); // 用户id
+				logging.setUserName(loginUser.getUsername()); // 用户名
+				Integer tenantId = loginUser.getTenantId();
+				logging.setTenantId(tenantId); // 租户id
+				if (tenantId != null) {
+					Tenant tenant = tenantService.getEntity(tenantId);
+					if (tenant != null) {
+						logging.setTenantName(tenant.getName()); // 租户名
+					}
+				}
+				logging.setRole(loginUser.getRoleName());
+				logging.setDescription("注销登录用户"); // 操作的描述
+				logging.setCreatedAt(new Date()); // 操作时间
+				logging.setIp(WishRequestContext.getIpAddress()); // 操作用户的ip
+				logging.setOperateType("注销"); // 操作类型
+				logging.setOperateObject("登录用户"); // 操作对象
+			}
+		} catch (Exception e) {
+			LOGGER.error("插入登录日志失败： " + e.getMessage(), e);
+		}
+		return logging;
+	}
+
+	/**
+	 * 安全运维系统登录 @Title: usmLogin @author zm @Description: TODO @param
+	 * loginUser @param uuid @param url @return void @throws
+	 */
+	private void usmLogin(User loginUser, String uuid, String url) {
+		try {
+			AuthUser authUser = new AuthUser();
+			authUser.setSessionId(uuid);
+			authUser.setUserId(loginUser.getId().toString());
+			authUser.setUsername(loginUser.getUsername());
+			if (loginUser.getTenantId() == null) {
+				authUser.setTenantId(null);
+			} else {
+				authUser.setTenantId(loginUser.getTenantId().toString());
+			}
+			authUser.setUserType(loginUser.getRoleId().toString());
+			AuthClient.login(authUser, url);
+		} catch (Exception e) {
+			LOGGER.error("调用安全运维登录接口失败： " + e.getMessage(), e);
+		}
+	}
+
+	/**
+	 * 安全运维系统注销 @Title: usmLogout @author zm @Description: TODO @param
+	 * loginUser @param uuid @param url @return void @throws
+	 */
+	private void usmLogout(User loginUser, String uuid, String url) {
+		try {
+			AuthUser authUser = new AuthUser();
+			authUser.setSessionId(uuid);
+			authUser.setUserId(loginUser.getId().toString());
+			authUser.setUsername(loginUser.getUsername());
+			if (loginUser.getTenantId() == null) {
+				authUser.setTenantId(null);
+			} else {
+				authUser.setTenantId(loginUser.getTenantId().toString());
+			}
+			authUser.setUserType(loginUser.getRoleName());
+			AuthClient.logout(authUser, url);
+		} catch (Exception e) {
+			LOGGER.error("调用安全运维注销接口失败： " + e.getMessage(), e);
+		}
+	}
+
+	/**
+	 * 处理安全运维系统登陆
+	 * 
+	 * @Title: usmLogin_
+	 * @Description: TODO
+	 * @param req
+	 * @throws Exception
+	 * @return Message
+	 */
+	@RequestMapping(value = "/usmLogin_", method = { RequestMethod.GET,
+			RequestMethod.POST }, produces = "application/json")
+	public @ResponseBody Message usmLogin_(HttpServletRequest req) throws Exception {
+		Message msg = null;
+		try {
+			User userInCache = userCache.getUserInDB(req);
+			String sessionId = userCacheManager.getKey(userInCache);
+			this.usmLogin(userInCache, sessionId, this.url);
+		} catch (Exception e) {
+			LOGGER.error("处理安全运维系统登陆失败:" + e.getMessage(), e);
+		}
+		return msg;
+	}
+
+	/**
+	 * 根据用户名查找到用户是否需要进行CA验证标示
+	 */
+	@RequestMapping(value = "/flag", method = { RequestMethod.POST, RequestMethod.GET }, produces="application/json")
+	public @ResponseBody Message flag(String username){
+		Message msg = Message.failure();
+		List<User> list = userService.getUserEntityByUsername(username);
+		if (list.size() > 0) {
+			User user = list.get(0);
+			if(user.getCaCheck() == 0){
+				msg = Message.success();
+			}
+		}
+		return msg;
+	}
+
+	public static void main(String[] args) {
+		try {
+			
+			System.out.println(SecureRandom.getInstance("SHA1PRNG").nextLong());
+			SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
+		    System.out.println(random.nextGaussian());
+		      
+			String str = "scszwy2015!";
+			String salt = "admin";
+			String md5 = new Md5Hash(str, salt).toString();// 还可以转换为
+															// toBase64()/toHex()
+			System.out.println("密文： " + md5);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
