@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1462281825259_0" label="wishstack" name="wishstack">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wishstack-common" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wishstack-ws" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wishstack-web" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wishstack-service" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wishstack-rpc" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wishstack-dao" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wishstack-order" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wishstack-domain" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wishstack-client" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1462449041168_1" label="Window Working Set" name="Aggregate for window 1462449041167"/>
+</workingSetManager>

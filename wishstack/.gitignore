@@ -9,5 +9,7 @@ target/
 .classpath
 .settings/*
 */.settings/*
+./Servers/*
+./RemoteSystemsTempFiles
 
 
