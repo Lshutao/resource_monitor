@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+
 /**
  * 首页
  * @author ttx
@@ -27,4 +29,14 @@ public class IndexController{
 		//return "mainFrame/frame";
 		return "login";
 	}
+	
+	@RequestMapping(value="tenantHomePage",method = {RequestMethod.GET, RequestMethod.POST})
+	
+	public String adminIndex(HttpServletRequest request, Model view){
+	//public String adminIndex(String test, Model view, HttpServletRequest request){
+		LOGGER.info("准备显示首页");
+		return "mainFrame/frame";
+		
+	}
 }
+

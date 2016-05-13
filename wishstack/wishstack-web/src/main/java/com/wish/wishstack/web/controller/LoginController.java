@@ -44,7 +44,7 @@ public class LoginController {
 	public @ResponseBody Message login(String username, String password,
 			HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 		LOGGER.error("进入登录界面");
-		Message msg = Message.failure();
+		Message msg = Message.success();
 		return msg;
 	}
 	
