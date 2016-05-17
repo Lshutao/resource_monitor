@@ -40,13 +40,7 @@ var login = {
 			$('#msg').html('<i class="wish_notification"></i>请输入账户名');
 		}else if(!password.val()){
 			$('#msg').html('<i class="wish_notification"></i>请输入密码');
-		}else{
-			var signed_data;
-			var original_jsp;
-			var userCACheckFlag;
-			var authMode;
-			var SystemCACheck = $("#checkCA").val();
-			
+		}else{		
 			$.ajax({
 				type : "POST",
 				dataType: "json",
@@ -59,14 +53,8 @@ var login = {
 						console.log("failed")
 					}else if(data.code == 'success'){
 						public_obj.setCookie("menuFlag", "0", 1800);
-//						window.location = "/wishstack-web/home";
-						window.location = "login_back";
-//						$.ajax({
-//							type : "POST",
-//							dataType: "json",
-//							url : contextPath +"/usmLogin_",
-//							success : function(data){}
-//						});
+						window.location = "/wishstack-web/tenantHomePage";
+						console.log("redirect page")
 					}
 				}
 			});

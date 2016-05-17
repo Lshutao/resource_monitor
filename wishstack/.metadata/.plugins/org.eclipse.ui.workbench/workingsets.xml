@@ -2,8 +2,8 @@
 <workingSetManager>
 <workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1462266395261_1" label="wishstack" name="wishstack">
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wishstack-common" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wishstack-web" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wishstack-ws" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wishstack-web" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wishstack-service" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wishstack-rpc" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/wishstack-dao" type="4"/>

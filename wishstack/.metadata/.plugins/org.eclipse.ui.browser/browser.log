@@ -44,3 +44,4 @@
 5月 12, 2016 18:39:20.52 console.error: 
 5月 12, 2016 18:39:20.52   Protocol error (noSuchActor): No such actor for ID: server1.conn6.animationsActor23
 5月 12, 2016 18:39:25.15 console.warn: Asynchronous operation was aborted as selection changed.
+5月 13, 2016 10:11:45.75 [NPAPI 15576] ###!!! ABORT: Aborting on channel error.: file c:/builds/moz2_slave/m-rel-w32-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 1857
