@@ -40,13 +40,26 @@ import java.security.SecureRandom;
 public class LoginController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
 	
-	@RequestMapping(value = "/login", method = { RequestMethod.POST, RequestMethod.GET }, produces = "application/json")
+	@RequestMapping(value = "/login_back", method = { RequestMethod.POST, RequestMethod.GET }, produces = "application/json")
 	public @ResponseBody Message login(String username, String password,
 			HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
 		LOGGER.error("进入登录界面");
+		
 		Message msg = Message.failure();
+		msg = Message.success();
 		return msg;
 	}
+	
+	@RequestMapping(value = "/admin_login", method = { RequestMethod.POST, RequestMethod.GET }, produces = "application/json")
+	public @ResponseBody Message login(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+		LOGGER.error("进入admin界面");
+		
+		Message msg = Message.success();
+		
+		return msg;
+	}
+	
+	
 	
 	
 }

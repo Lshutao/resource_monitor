@@ -33,6 +33,7 @@ var login = {
 	},
 	
 	validate_function : function(){
+		alert("aaafff");
 		if(!username.val() && !password.val()){
 			$('#msg').html('<i class="wish_notification"></i>请输入账户名和密码');
 		}else if(!username.val()){
@@ -58,13 +59,14 @@ var login = {
 						console.log("failed")
 					}else if(data.code == 'success'){
 						public_obj.setCookie("menuFlag", "0", 1800);
-						window.location = "/wishstack-web/home";
-						$.ajax({
-							type : "POST",
-							dataType: "json",
-							url : contextPath +"/usmLogin_",
-							success : function(data){}
-						});
+//						window.location = "/wishstack-web/home";
+						window.location = "login_back";
+//						$.ajax({
+//							type : "POST",
+//							dataType: "json",
+//							url : contextPath +"/usmLogin_",
+//							success : function(data){}
+//						});
 					}
 				}
 			});
