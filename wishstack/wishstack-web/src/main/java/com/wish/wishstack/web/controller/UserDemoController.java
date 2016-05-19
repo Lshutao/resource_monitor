@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
  * @since 2015-06-16
  */
 @Controller
-@RequestMapping(value = "/userDemo")
+@RequestMapping(value = "/userDemo12")
 public class UserDemoController{
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserDemoController.class);
 	@Resource private UserDemoService userDemoService;

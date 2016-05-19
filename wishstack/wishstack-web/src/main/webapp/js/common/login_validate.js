@@ -33,7 +33,6 @@ var login = {
 	},
 	
 	validate_function : function(){
-		alert("aaafff");
 		if(!username.val() && !password.val()){
 			$('#msg').html('<i class="wish_notification"></i>请输入账户名和密码');
 		}else if(!username.val()){
@@ -47,14 +46,11 @@ var login = {
 				data: {'username' : username.val(), 'password' : password.val()},
 				url : contextPath + "/login",
 				success : function(data){
-					console.log(data);
 					if(data.code == 'failure'){
 						$('#msg').html('<i class="wish_notification"></i>' + data.result);
-						console.log("failed")
 					}else if(data.code == 'success'){
 						public_obj.setCookie("menuFlag", "0", 1800);
 						window.location = "/wishstack-web/tenantHomePage";
-						console.log("redirect page")
 					}
 				}
 			});

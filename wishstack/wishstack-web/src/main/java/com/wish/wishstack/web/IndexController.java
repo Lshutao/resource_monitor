@@ -26,15 +26,15 @@ public class IndexController{
 	public String index(HttpServletRequest request, Model view){
 	    view.addAttribute("contextPath", request.getContextPath());
 	    LOGGER.info("---first page----- ");
-		//return "mainFrame/frame";
+	   
 		return "login";
 	}
 	
 	@RequestMapping(value="tenantHomePage",method = {RequestMethod.GET, RequestMethod.POST})
 	
 	public String adminIndex(HttpServletRequest request, Model view){
-	//public String adminIndex(String test, Model view, HttpServletRequest request){
 		LOGGER.info("准备显示首页");
+		view.addAttribute("contextPath", request.getContextPath());
 		return "mainFrame/frame";
 		
 	}

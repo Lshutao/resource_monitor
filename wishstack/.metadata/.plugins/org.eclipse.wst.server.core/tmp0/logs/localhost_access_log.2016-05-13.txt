@@ -142,3 +142,11 @@
 0:0:0:0:0:0:0:1 - - [13/May/2016:17:13:44 +0800] "GET /wishstack-web/img/glyphicons-halflings.png HTTP/1.1" 200 4352
 0:0:0:0:0:0:0:1 - - [13/May/2016:17:13:44 +0800] "GET /wishstack-web/img/glyphicons-halflings-white.png HTTP/1.1" 200 4352
 0:0:0:0:0:0:0:1 - - [13/May/2016:17:13:44 +0800] "GET /wishstack-web/img/furley_bg.png HTTP/1.1" 200 42976
+0:0:0:0:0:0:0:1 - - [13/May/2016:17:22:35 +0800] "GET /function HTTP/1.1" 404 967
+0:0:0:0:0:0:0:1 - - [13/May/2016:17:22:38 +0800] "GET /wishstack-web/ HTTP/1.1" 200 3952
+0:0:0:0:0:0:0:1 - - [13/May/2016:17:22:40 +0800] "POST /wishstack-web/login HTTP/1.1" 200 66
+0:0:0:0:0:0:0:1 - - [13/May/2016:17:22:40 +0800] "GET /wishstack-web/tenantHomePage HTTP/1.1" 200 4009
+0:0:0:0:0:0:0:1 - - [13/May/2016:17:22:42 +0800] "GET /setting HTTP/1.1" 404 965
+0:0:0:0:0:0:0:1 - - [13/May/2016:17:24:25 +0800] "GET /help HTTP/1.1" 404 959
+0:0:0:0:0:0:0:1 - - [13/May/2016:17:26:37 +0800] "GET /function HTTP/1.1" 404 967
+0:0:0:0:0:0:0:1 - - [13/May/2016:17:26:50 +0800] "GET /user HTTP/1.1" 404 959

@@ -563,3 +563,521 @@
 2016-05-13 17:12:51,574 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
 2016-05-13 17:12:51,709 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2016-05-13 17:12:51,709 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-13 17:24:23,240 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-13 17:24:23,244 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-13 17:24:23,369 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-13 17:24:23,369 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-18 10:03:24,368 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.
+2016-05-18 10:03:30,553 [main] ERROR c.g.t.t.d.PublishedGradleVersions - Cannot download published Gradle versions.
+java.net.UnknownHostException: services.gradle.org
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source) ~[na:1.7.0_80]
+	at java.net.PlainSocketImpl.connect(Unknown Source) ~[na:1.7.0_80]
+	at java.net.SocksSocketImpl.connect(Unknown Source) ~[na:1.7.0_80]
+	at java.net.Socket.connect(Unknown Source) ~[na:1.7.0_80]
+	at sun.security.ssl.SSLSocketImpl.connect(Unknown Source) ~[na:1.7.0_80]
+	at sun.security.ssl.BaseSSLSocketImpl.connect(Unknown Source) ~[na:1.7.0_80]
+	at sun.net.NetworkClient.doConnect(Unknown Source) ~[na:1.7.0_80]
+	at sun.net.www.http.HttpClient.openServer(Unknown Source) ~[na:1.7.0_80]
+	at sun.net.www.http.HttpClient.openServer(Unknown Source) ~[na:1.7.0_80]
+	at sun.net.www.protocol.https.HttpsClient.<init>(Unknown Source) ~[na:1.7.0_80]
+	at sun.net.www.protocol.https.HttpsClient.New(Unknown Source) ~[na:1.7.0_80]
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(Unknown Source) ~[na:1.7.0_80]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source) ~[na:1.7.0_80]
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(Unknown Source) ~[na:1.7.0_80]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source) ~[na:1.7.0_80]
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(Unknown Source) ~[na:1.7.0_80]
+	at com.gradleware.tooling.toolingutils.distribution.PublishedGradleVersions.downloadVersionInformation(PublishedGradleVersions.java:167) [com.gradleware.tooling.utils_0.6.1.v201509101146.jar:na]
+	at com.gradleware.tooling.toolingutils.distribution.PublishedGradleVersions.create(PublishedGradleVersions.java:134) [com.gradleware.tooling.utils_0.6.1.v201509101146.jar:na]
+	at org.eclipse.buildship.core.util.gradle.PublishedGradleVersionsWrapper.create(PublishedGradleVersionsWrapper.java:40) [org.eclipse.buildship.core_1.0.5.v20150922-2202.jar:na]
+	at org.eclipse.buildship.core.util.gradle.PublishedGradleVersionsWrapper.<init>(PublishedGradleVersionsWrapper.java:35) [org.eclipse.buildship.core_1.0.5.v20150922-2202.jar:na]
+	at org.eclipse.buildship.core.CorePlugin.createPublishedGradleVersions(CorePlugin.java:166) [org.eclipse.buildship.core_1.0.5.v20150922-2202.jar:na]
+	at org.eclipse.buildship.core.CorePlugin.registerServices(CorePlugin.java:139) [org.eclipse.buildship.core_1.0.5.v20150922-2202.jar:na]
+	at org.eclipse.buildship.core.CorePlugin.start(CorePlugin.java:102) [org.eclipse.buildship.core_1.0.5.v20150922-2202.jar:na]
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at java.security.AccessController.doPrivileged(Native Method) [na:1.7.0_80]
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:764) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:721) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.container.Module.start(Module.java:439) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:36) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:398) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [na:1.7.0_80]
+	at java.lang.Class.getDeclaredConstructors0(Native Method) [na:1.7.0_80]
+	at java.lang.Class.privateGetDeclaredConstructors(Unknown Source) [na:1.7.0_80]
+	at java.lang.Class.getConstructor0(Unknown Source) [na:1.7.0_80]
+	at java.lang.Class.newInstance(Unknown Source) [na:1.7.0_80]
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.loadBundleActivator(BundleContextImpl.java:755) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:706) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:941) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:318) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.container.Module.doStart(Module.java:571) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.container.Module.start(Module.java:439) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:327) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:402) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:352) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:344) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at java.lang.ClassLoader.loadClass(Unknown Source) [na:1.7.0_80]
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:573) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174) [org.eclipse.equinox.registry_3.6.0.v20150318-1503.jar:na]
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905) [org.eclipse.equinox.registry_3.6.0.v20150318-1503.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243) [org.eclipse.equinox.registry_3.6.0.v20150318-1503.jar:na]
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55) [org.eclipse.equinox.registry_3.6.0.v20150318-1503.jar:na]
+	at org.eclipse.ui.internal.console.ConsolePageParticipantExtension.createDelegate(ConsolePageParticipantExtension.java:72) [org.eclipse.ui.console_3.6.100.v20150822-1912.jar:na]
+	at org.eclipse.ui.internal.console.ConsoleManager.getPageParticipants(ConsoleManager.java:455) [org.eclipse.ui.console_3.6.100.v20150822-1912.jar:na]
+	at org.eclipse.ui.internal.console.ConsoleView.doCreatePage(ConsoleView.java:317) [org.eclipse.ui.console_3.6.100.v20150822-1912.jar:na]
+	at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:422) [org.eclipse.ui.workbench_3.107.0.v20150825-2206.jar:na]
+	at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:768) [org.eclipse.ui.workbench_3.107.0.v20150825-2206.jar:na]
+	at org.eclipse.ui.internal.console.ConsoleView$4.run(ConsoleView.java:398) [org.eclipse.ui.console_3.6.100.v20150822-1912.jar:na]
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) [org.eclipse.swt.win32.win32.x86_64_3.104.1.v20150825-0743.jar:na]
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135) [org.eclipse.swt.win32.win32.x86_64_3.104.1.v20150825-0743.jar:na]
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4155) [org.eclipse.swt.win32.win32.x86_64_3.104.1.v20150825-0743.jar:na]
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3772) [org.eclipse.swt.win32.win32.x86_64_3.104.1.v20150825-0743.jar:na]
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127) [org.eclipse.e4.ui.workbench.swt_0.13.0.v20150504-0621.jar:na]
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337) [org.eclipse.core.databinding.observable_1.5.0.v20150422-0725.jar:na]
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018) [org.eclipse.e4.ui.workbench.swt_0.13.0.v20150504-0621.jar:na]
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156) [org.eclipse.e4.ui.workbench_1.3.0.v20150531-1948.jar:na]
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:654) [org.eclipse.ui.workbench_3.107.0.v20150825-2206.jar:na]
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337) [org.eclipse.core.databinding.observable_1.5.0.v20150422-0725.jar:na]
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:598) [org.eclipse.ui.workbench_3.107.0.v20150825-2206.jar:na]
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150) [org.eclipse.ui.workbench_3.107.0.v20150825-2206.jar:na]
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139) [org.eclipse.ui.ide.application_1.1.0.v20150422-0725.jar:na]
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196) [org.eclipse.equinox.app_1.3.300.v20150423-1356.jar:na]
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235) [org.eclipse.osgi_3.10.101.v20150820-1432.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_80]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_80]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.7.0_80]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.7.0_80]
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669) [org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar:na]
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608) [org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar:na]
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515) [org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar:na]
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1488) [org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar:na]
+2016-05-18 10:07:10,254 [Worker-9] INFO  o.e.m.i.launch.MavenLaunchDelegate - E:\develop\resource_monitor\wishstack\wishstack-web
+2016-05-18 10:07:10,256 [Worker-9] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B clean compile
+2016-05-18 10:09:47,199 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:09:47,203 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-18 10:09:47,253 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:09:47,253 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-18 10:13:49,784 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:13:49,786 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-05-18 10:13:49,787 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:13:49,787 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-18 10:14:09,830 [Worker-4] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2016-05-18 10:14:11,247 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-client:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-client\pom.xml.
+2016-05-18 10:14:11,596 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-common:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-common\pom.xml.
+2016-05-18 10:14:11,720 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-dao:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-dao\pom.xml.
+2016-05-18 10:14:11,889 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-domain:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-domain\pom.xml.
+2016-05-18 10:14:12,004 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-order:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-order\pom.xml.
+2016-05-18 10:14:12,085 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-rpc:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-rpc\pom.xml.
+2016-05-18 10:14:12,214 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-service:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-service\pom.xml.
+2016-05-18 10:14:12,345 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-web:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-web\pom.xml.
+2016-05-18 10:14:12,838 [Worker-4] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-ws:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-ws\pom.xml.
+2016-05-18 10:14:16,331 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-client/src/main/java
+2016-05-18 10:14:16,332 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /wishstack-client/src/main/resources
+2016-05-18 10:14:16,332 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-client/src/test/java
+2016-05-18 10:14:16,524 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-common/src/main/java
+2016-05-18 10:14:16,524 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-common/src/test/java
+2016-05-18 10:14:16,977 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-dao/src/main/java
+2016-05-18 10:14:16,977 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /wishstack-dao/src/main/resources
+2016-05-18 10:14:16,978 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-dao/src/test/java
+2016-05-18 10:14:17,089 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-domain/src/main/java
+2016-05-18 10:14:17,089 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-domain/src/test/java
+2016-05-18 10:14:17,180 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-order/src/main/java
+2016-05-18 10:14:17,180 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /wishstack-order/src/main/resources
+2016-05-18 10:14:17,181 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-order/src/test/java
+2016-05-18 10:14:17,211 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-rpc/src/main/java
+2016-05-18 10:14:17,212 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-rpc/src/test/java
+2016-05-18 10:14:17,329 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-service/src/main/java
+2016-05-18 10:14:17,330 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /wishstack-service/src/main/resources
+2016-05-18 10:14:17,330 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-service/src/test/java
+2016-05-18 10:14:17,467 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-web/src/main/java
+2016-05-18 10:14:17,467 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /wishstack-web/src/main/resources
+2016-05-18 10:14:17,468 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-web/src/test/java
+2016-05-18 10:14:19,595 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-ws/src/main/java
+2016-05-18 10:14:19,596 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /wishstack-ws/src/main/resources
+2016-05-18 10:14:19,596 [Worker-4] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-ws/src/test/java
+2016-05-18 10:14:20,364 [Worker-4] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for wishstack-web
+2016-05-18 10:14:20,393 [Worker-4] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 10 sec
+2016-05-18 10:14:20,941 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:20,941 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-common\src\main\resources
+2016-05-18 10:14:20,943 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:20,943 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-common\src\test\resources
+2016-05-18 10:14:21,750 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:21,750 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\main\resources
+2016-05-18 10:14:21,751 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:21,751 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\test\resources
+2016-05-18 10:14:22,039 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:22,040 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2016-05-18 10:14:22,064 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:22,064 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-dao\src\test\resources
+2016-05-18 10:14:22,117 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:22,117 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-05-18 10:14:22,140 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:22,140 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-order\src\test\resources
+2016-05-18 10:14:22,461 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:22,461 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-rpc\src\main\resources
+2016-05-18 10:14:22,462 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:22,462 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-rpc\src\test\resources
+2016-05-18 10:14:23,073 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:23,074 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-05-18 10:14:23,142 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:23,143 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-client\src\test\resources
+2016-05-18 10:14:23,387 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:23,388 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-05-18 10:14:23,421 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:23,421 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-service\src\test\resources
+2016-05-18 10:14:30,913 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:30,914 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-18 10:14:30,950 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:30,950 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-18 10:14:30,950 [Worker-13] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of wishstack-web
+2016-05-18 10:14:30,951 [Worker-13] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for wishstack-web
+2016-05-18 10:14:30,956 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:32,001 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:32,002 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-05-18 10:14:32,042 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-18 10:14:32,042 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-ws\src\test\resources
+2016-05-19 10:46:45,895 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.
+2016-05-19 10:58:28,033 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 10:58:28,036 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 10:58:28,189 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 10:58:28,189 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 11:00:33,945 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 11:00:33,948 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 11:00:33,999 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 11:00:33,999 [Worker-23] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 11:01:24,072 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 11:01:24,072 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-05-19 11:01:24,073 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 11:01:24,073 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 14:12:24,523 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:12:24,524 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 14:12:24,579 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:12:24,579 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 14:47:26,432 [Worker-72] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:47:26,433 [Worker-72] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 14:47:26,453 [Worker-72] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:47:26,453 [Worker-72] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 14:51:02,618 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:51:02,619 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 14:51:02,636 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:51:02,636 [Worker-74] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 14:51:44,670 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:51:44,671 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 14:51:44,688 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:51:44,689 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 14:52:08,637 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:52:08,638 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 14:52:08,657 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:52:08,658 [Worker-67] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 14:52:25,087 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:52:25,087 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-05-19 14:52:25,088 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:52:25,088 [Worker-73] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 14:58:19,028 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:58:19,028 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\main\resources
+2016-05-19 14:58:19,029 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:58:19,029 [Worker-75] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\test\resources
+2016-05-19 14:59:12,935 [Worker-73] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2016-05-19 14:59:14,975 [Worker-73] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-domain:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-domain\pom.xml.
+2016-05-19 14:59:15,403 [Worker-73] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-domain/src/main/java
+2016-05-19 14:59:15,404 [Worker-73] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-domain/src/test/java
+2016-05-19 14:59:16,089 [Worker-73] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 3 sec
+2016-05-19 14:59:16,571 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:59:16,571 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\main\resources
+2016-05-19 14:59:16,573 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:59:16,573 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\test\resources
+2016-05-19 14:59:47,131 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:59:47,131 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\main\resources
+2016-05-19 14:59:47,132 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 14:59:47,132 [Worker-81] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\test\resources
+2016-05-19 15:04:30,631 [Worker-86] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2016-05-19 15:04:31,385 [Worker-86] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-domain:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-domain\pom.xml.
+2016-05-19 15:04:31,613 [Worker-86] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-domain/src/main/java
+2016-05-19 15:04:31,613 [Worker-86] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-domain/src/test/java
+2016-05-19 15:04:31,981 [Worker-86] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2016-05-19 15:04:32,580 [Worker-82] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:04:32,580 [Worker-82] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\main\resources
+2016-05-19 15:04:32,582 [Worker-82] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:04:32,582 [Worker-82] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\test\resources
+2016-05-19 15:05:35,469 [Worker-88] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2016-05-19 15:05:36,246 [Worker-88] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-common:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-common\pom.xml.
+2016-05-19 15:05:36,457 [Worker-88] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-domain:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-domain\pom.xml.
+2016-05-19 15:05:36,665 [Worker-88] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-common/src/main/java
+2016-05-19 15:05:36,665 [Worker-88] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-common/src/test/java
+2016-05-19 15:05:36,765 [Worker-88] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-domain/src/main/java
+2016-05-19 15:05:36,765 [Worker-88] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-domain/src/test/java
+2016-05-19 15:05:37,734 [Worker-88] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 2 sec
+2016-05-19 15:05:38,155 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:05:38,155 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-common\src\main\resources
+2016-05-19 15:05:38,156 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:05:38,156 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-common\src\test\resources
+2016-05-19 15:05:38,792 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:05:38,792 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\main\resources
+2016-05-19 15:05:38,794 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:05:38,794 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\test\resources
+2016-05-19 15:07:39,209 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:07:39,209 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\main\resources
+2016-05-19 15:07:39,211 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:07:39,211 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\test\resources
+2016-05-19 15:07:39,273 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:07:39,274 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 15:07:39,294 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:07:39,294 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 15:07:52,916 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:07:52,916 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\main\resources
+2016-05-19 15:07:52,917 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:07:52,917 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\test\resources
+2016-05-19 15:10:17,883 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:10:17,884 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 15:10:17,898 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:10:17,898 [Worker-87] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 15:21:30,210 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:21:30,211 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-05-19 15:21:30,212 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:21:30,212 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 15:21:43,520 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:21:43,521 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 15:21:43,549 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:21:43,549 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 15:21:51,455 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:21:51,456 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 15:21:51,471 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:21:51,471 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 15:23:46,891 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:23:46,892 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 15:23:46,913 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:23:46,914 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 15:25:38,919 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:25:38,920 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 15:25:38,936 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:25:38,937 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 15:26:20,186 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:26:20,186 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-05-19 15:26:20,187 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:26:20,187 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 15:31:06,518 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:31:06,518 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 15:31:06,536 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:31:06,536 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 15:37:55,295 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:37:55,296 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 15:37:55,312 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:37:55,313 [Worker-106] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 15:45:37,770 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:45:37,771 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 15:45:37,792 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:45:37,793 [Worker-123] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 15:51:05,280 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:51:05,281 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 15:51:05,301 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:51:05,301 [Worker-125] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 15:58:04,544 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:58:04,545 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-05-19 15:58:04,545 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:58:04,546 [Worker-128] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 15:58:40,707 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:58:40,708 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 15:58:40,721 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 15:58:40,722 [Worker-127] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:00:49,521 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:00:49,522 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 16:00:49,544 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:00:49,544 [Worker-132] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:06:58,385 [Worker-138] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:06:58,386 [Worker-138] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 16:06:58,405 [Worker-138] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:06:58,405 [Worker-138] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:07:21,358 [Worker-134] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:07:21,358 [Worker-134] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 16:07:21,377 [Worker-134] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:07:21,377 [Worker-134] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:08:45,550 [Worker-143] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2016-05-19 16:08:49,058 [Worker-143] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-client:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-client\pom.xml.
+2016-05-19 16:08:49,910 [Worker-143] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-common:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-common\pom.xml.
+2016-05-19 16:08:50,036 [Worker-143] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-dao:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-dao\pom.xml.
+2016-05-19 16:08:50,534 [Worker-143] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-domain:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-domain\pom.xml.
+2016-05-19 16:08:50,655 [Worker-143] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-order:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-order\pom.xml.
+2016-05-19 16:08:50,754 [Worker-143] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-rpc:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-rpc\pom.xml.
+2016-05-19 16:08:50,880 [Worker-143] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-service:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-service\pom.xml.
+2016-05-19 16:08:51,030 [Worker-143] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-web:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-web\pom.xml.
+2016-05-19 16:08:51,834 [Worker-143] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.wish:wishstack-ws:1.0 @ E:\develop\resource_monitor\wishstack\wishstack-ws\pom.xml.
+2016-05-19 16:08:57,290 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-client/src/main/java
+2016-05-19 16:08:57,290 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /wishstack-client/src/main/resources
+2016-05-19 16:08:57,290 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-client/src/test/java
+2016-05-19 16:08:57,428 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-common/src/main/java
+2016-05-19 16:08:57,428 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-common/src/test/java
+2016-05-19 16:08:57,627 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-dao/src/main/java
+2016-05-19 16:08:57,627 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /wishstack-dao/src/main/resources
+2016-05-19 16:08:57,628 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-dao/src/test/java
+2016-05-19 16:08:57,775 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-domain/src/main/java
+2016-05-19 16:08:57,775 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-domain/src/test/java
+2016-05-19 16:08:57,873 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-order/src/main/java
+2016-05-19 16:08:57,873 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /wishstack-order/src/main/resources
+2016-05-19 16:08:57,873 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-order/src/test/java
+2016-05-19 16:08:57,908 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-rpc/src/main/java
+2016-05-19 16:08:57,908 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-rpc/src/test/java
+2016-05-19 16:08:58,034 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-service/src/main/java
+2016-05-19 16:08:58,035 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /wishstack-service/src/main/resources
+2016-05-19 16:08:58,035 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-service/src/test/java
+2016-05-19 16:08:58,156 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-web/src/main/java
+2016-05-19 16:08:58,156 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /wishstack-web/src/main/resources
+2016-05-19 16:08:58,157 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-web/src/test/java
+2016-05-19 16:09:00,354 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-ws/src/main/java
+2016-05-19 16:09:00,355 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /wishstack-ws/src/main/resources
+2016-05-19 16:09:00,355 [Worker-143] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /wishstack-ws/src/test/java
+2016-05-19 16:09:00,750 [Worker-143] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for wishstack-web
+2016-05-19 16:09:00,767 [Worker-143] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 15 sec
+2016-05-19 16:09:01,182 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:01,182 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-common\src\main\resources
+2016-05-19 16:09:01,184 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:01,184 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-common\src\test\resources
+2016-05-19 16:09:02,058 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:02,058 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\main\resources
+2016-05-19 16:09:02,059 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:02,059 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-domain\src\test\resources
+2016-05-19 16:09:02,341 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:02,341 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2016-05-19 16:09:02,359 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:02,360 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-dao\src\test\resources
+2016-05-19 16:09:02,397 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:02,398 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-05-19 16:09:02,435 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:02,435 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-order\src\test\resources
+2016-05-19 16:09:03,076 [Worker-145] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:03,076 [Worker-145] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-rpc\src\main\resources
+2016-05-19 16:09:03,077 [Worker-145] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:03,077 [Worker-145] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-rpc\src\test\resources
+2016-05-19 16:09:03,369 [Worker-145] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:03,370 [Worker-145] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-05-19 16:09:03,387 [Worker-145] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:03,387 [Worker-145] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-client\src\test\resources
+2016-05-19 16:09:03,631 [Worker-145] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:03,632 [Worker-145] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-05-19 16:09:03,650 [Worker-145] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:03,651 [Worker-145] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-service\src\test\resources
+2016-05-19 16:09:16,507 [Worker-134] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:16,507 [Worker-134] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 16:09:16,545 [Worker-134] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:16,545 [Worker-134] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:09:16,545 [Worker-134] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of wishstack-web
+2016-05-19 16:09:16,546 [Worker-134] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for wishstack-web
+2016-05-19 16:09:16,552 [Worker-134] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:23,110 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:23,110 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2016-05-19 16:09:23,130 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:09:23,131 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-ws\src\test\resources
+2016-05-19 16:13:50,336 [Worker-147] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:13:50,338 [Worker-147] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 16:13:50,385 [Worker-147] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:13:50,386 [Worker-147] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:14:03,321 [Worker-157] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:14:03,322 [Worker-157] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 16:14:03,336 [Worker-157] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:14:03,337 [Worker-157] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:14:15,071 [Worker-158] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:14:15,071 [Worker-158] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-05-19 16:14:15,072 [Worker-158] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:14:15,072 [Worker-158] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:14:30,235 [Worker-155] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:14:30,235 [Worker-155] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-05-19 16:14:30,236 [Worker-155] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:14:30,236 [Worker-155] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:18:04,419 [Worker-160] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:18:04,419 [Worker-160] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 16:18:04,435 [Worker-160] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:18:04,435 [Worker-160] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:18:18,983 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:18:18,984 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 16:18:19,000 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:18:19,000 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:18:26,237 [Worker-147] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:18:26,238 [Worker-147] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 16:18:26,252 [Worker-147] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:18:26,252 [Worker-147] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:20:01,680 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:20:01,681 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 16:20:01,698 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:20:01,698 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:44:51,178 [Worker-164] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:44:51,179 [Worker-164] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-05-19 16:44:51,179 [Worker-164] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:44:51,179 [Worker-164] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:46:07,729 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:46:07,729 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 16:46:07,753 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:46:07,754 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:48:55,285 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:48:55,286 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 16:48:55,302 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:48:55,302 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:50:19,215 [Worker-167] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:50:19,215 [Worker-167] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-05-19 16:50:19,216 [Worker-167] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:50:19,216 [Worker-167] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:51:02,880 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:51:02,881 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 16:51:02,899 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:51:02,899 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:52:30,948 [Worker-171] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:52:30,948 [Worker-171] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-05-19 16:52:30,949 [Worker-171] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:52:30,949 [Worker-171] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:55:57,286 [Worker-176] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:55:57,287 [Worker-176] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 16:55:57,313 [Worker-176] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:55:57,313 [Worker-176] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 16:56:30,342 [Worker-167] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:56:30,343 [Worker-167] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 16:56:30,361 [Worker-167] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 16:56:30,361 [Worker-167] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 17:19:11,954 [Worker-184] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 17:19:11,955 [Worker-184] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 17:19:11,978 [Worker-184] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 17:19:11,978 [Worker-184] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 17:22:18,879 [Worker-184] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 17:22:18,880 [Worker-184] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 17:22:18,897 [Worker-184] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 17:22:18,897 [Worker-184] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 17:22:38,084 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 17:22:38,084 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-05-19 17:22:38,085 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 17:22:38,085 [Worker-187] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 17:22:51,282 [Worker-186] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 17:22:51,282 [Worker-186] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 17:22:51,298 [Worker-186] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 17:22:51,298 [Worker-186] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 17:23:57,979 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 17:23:57,980 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 17:23:57,995 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 17:23:57,995 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 17:24:22,070 [Worker-168] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 17:24:22,070 [Worker-168] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-05-19 17:24:22,071 [Worker-168] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 17:24:22,071 [Worker-168] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 17:25:11,962 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 17:25:11,963 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-05-19 17:25:11,963 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 17:25:11,963 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources
+2016-05-19 17:27:15,849 [Worker-190] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 17:27:15,850 [Worker-190] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2016-05-19 17:27:15,867 [Worker-190] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-05-19 17:27:15,867 [Worker-190] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\develop\resource_monitor\wishstack\wishstack-web\src\test\resources

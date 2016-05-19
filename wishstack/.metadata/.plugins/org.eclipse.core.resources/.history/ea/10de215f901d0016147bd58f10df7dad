@@ -1,0 +1,428 @@
+/*
+ * Copyright (c) 2015 wish.com All rights reserved.
+ * 本软件源代码版权归----所有,未经许可不得任意复制与传播.
+ */
+package com.wish.wishstack.domain.user;
+
+import java.util.Date;
+
+import com.wish.wishstack.common.tools.EndecryptUtils;
+import com.wish.wishstack.domain.BaseQuery;
+
+/**
+ * 用户类
+ * @ClassName: User
+ * @author zm
+ * @date 2015年11月5日 下午6:03:13
+ */
+public class User extends BaseQuery {
+	private static final long serialVersionUID = 1L;
+	// 用户主键
+	private Integer id;
+	// uuid
+	private String uuid;
+	// 账号名
+	private String username;
+	// 用户名
+	private String name;
+	// 用户密码
+	private String password;
+	
+	private String strPassword;
+	
+	//维护用，用完立即失效
+	private String decodePasword;
+	
+	// 用户密码byte数组
+	private byte[] bytePassword;
+	// 确认密码
+	private String confirmPassword;
+	// 所属租户id
+	private Integer tenantId;
+	// 所属租户名
+	private String tenantName;
+	// 手机号
+	private String telephone;
+	// 邮件
+	private String email;
+	// 地址
+	private String address;
+	// 用户类型，角色主键
+	private Integer roleId;
+	// 用户角色
+	private String roleName;
+	// 登录IP
+	private String loginIp;
+	// 上次登录IP
+	private String lastLoginIp;
+	// 描述
+	private String description;
+	// 操作时间
+	private Date actionTime;
+	// 登录时间
+	private Date loginTime;
+	// 上次登录时间
+	private Date lastLoginTime;
+	// 非法登录次数
+	private Integer illegalLoginCount;
+	// 非法登录时间
+	private Date illegalLoginTime;
+	// 创建时间
+	private Date createdTime = new Date();
+	// 激活状态 0：激活，1：未激活
+	private Integer enabled;
+	// 登录状态 0：在线，1：离线
+	private Integer loginState;
+	// 绑定角色所属的类型主键
+	private Integer userType;
+	// 用户删除状态 0：未删除，1：删除
+	private Integer deleted = 0;
+	// 对应的云服务商id
+	private Integer providerId;
+	// 对应的云服务商名称
+	private String providerName;
+	//该用户是否需要进行CA验证  默认0 需要验证， 1不需要验证
+	private Integer caCheck = 0;
+	
+	//该用户是否需要进行CA验证的字符串类型
+	private String caCheckString;
+
+	//组织名称
+	private String orgName;
+	//key
+	private String key;
+	//别名
+	private String aliasName;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public byte[] getBytePassword() {
+		return bytePassword;
+	}
+
+	public void setBytePassword(byte[] bytePassword) {
+		this.bytePassword = bytePassword;
+	}
+
+	public Integer getTenantId() {
+		return tenantId;
+	}
+
+	public void setTenantId(Integer tenantId) {
+		this.tenantId = tenantId;
+	}
+
+	public String getTenantName() {
+		return tenantName;
+	}
+
+	public void setTenantName(String tenantName) {
+		this.tenantName = tenantName;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getRoleName() {
+		return roleName;
+	}
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+	}
+
+	public String getLoginIp() {
+		return loginIp;
+	}
+
+	public void setLoginIp(String loginIp) {
+		this.loginIp = loginIp;
+	}
+
+	public String getLastLoginIp() {
+		return lastLoginIp;
+	}
+
+	public void setLastLoginIp(String lastLoginIp) {
+		this.lastLoginIp = lastLoginIp;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Date getActionTime() {
+		return actionTime;
+	}
+
+	public void setActionTime(Date actionTime) {
+		this.actionTime = actionTime;
+	}
+
+	public Date getLoginTime() {
+		return loginTime;
+	}
+
+	public void setLoginTime(Date loginTime) {
+		this.loginTime = loginTime;
+	}
+
+	public Date getLastLoginTime() {
+		return lastLoginTime;
+	}
+
+	public Integer getIllegalLoginCount() {
+		return illegalLoginCount;
+	}
+
+	public void setIllegalLoginCount(Integer illegalLoginCount) {
+		this.illegalLoginCount = illegalLoginCount;
+	}
+
+	public Date getIllegalLoginTime() {
+		return illegalLoginTime;
+	}
+
+	public void setIllegalLoginTime(Date illegalLoginTime) {
+		this.illegalLoginTime = illegalLoginTime;
+	}
+
+	public void setLastLoginTime(Date lastLoginTime) {
+		this.lastLoginTime = lastLoginTime;
+	}
+
+	public Date getCreatedTime() {
+		return createdTime;
+	}
+
+	public void setCreatedTime(Date createdTime) {
+		this.createdTime = createdTime;
+	}
+
+	public Integer getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(Integer enabled) {
+		this.enabled = enabled;
+	}
+
+	public Integer getLoginState() {
+		return loginState;
+	}
+
+	public void setLoginState(Integer loginState) {
+		this.loginState = loginState;
+	}
+
+	public Integer getUserType() {
+		return userType;
+	}
+
+	public void setUserType(Integer userType) {
+		this.userType = userType;
+	}
+
+	public Integer getDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(Integer deleted) {
+		this.deleted = deleted;
+	}
+
+	public Integer getRoleId() {
+		return roleId;
+	}
+
+	public void setRoleId(Integer roleId) {
+		this.roleId = roleId;
+	}
+
+	public Integer getProviderId() {
+		return providerId;
+	}
+
+	public void setProviderId(Integer providerId) {
+		this.providerId = providerId;
+	}
+
+	public String getProviderName() {
+		return providerName;
+	}
+
+	public void setProviderName(String providerName) {
+		this.providerName = providerName;
+	}
+
+	
+	public String getOrgName() {
+		return orgName;
+	}
+
+	public void setOrgName(String orgName) {
+		this.orgName = orgName;
+	}
+
+	public String getKey() {
+		return key;
+	}
+
+	public void setKey(String key) {
+		this.key = key;
+	}
+
+	/**
+	 * 获取明文密码（AES）
+	 * @throws Exception 
+	 */
+	public String getDecodePassword(){
+		try {
+			return EndecryptUtils.decrypt(getPassword());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", uuid=" + uuid + ", username=" + username
+				+ ", name=" + name + ", password=" + password
+				+ ", confirmPassword=" + confirmPassword + ", tenantId="
+				+ tenantId + ", tenantName=" + tenantName + ", telephone="
+				+ telephone + ", email=" + email + ", address=" + address
+				+ ", roleId=" + roleId + ", roleName=" + roleName
+				+ ", loginIp=" + loginIp + ", lastLoginIp=" + lastLoginIp
+				+ ", description=" + description + ", actionTime=" + actionTime
+				+ ", loginTime=" + loginTime + ", lastLoginTime="
+				+ lastLoginTime + ", illegalLoginCount=" + illegalLoginCount
+				+ ", illegalLoginTime=" + illegalLoginTime + ", createdTime="
+				+ createdTime + ", enabled=" + enabled + ", loginState="
+				+ loginState + ", userType=" + userType + ", deleted="
+				+ deleted + ", providerId=" + providerId + ", providerName="
+				+ providerName + ",orgName="+orgName + ",key="+key+"]";
+	}
+
+	public String getStrPassword() {
+		return strPassword;
+	}
+
+	public void setStrPassword(String strPassword) {
+		this.strPassword = strPassword;
+	}
+
+	public String getDecodePasword() {
+		return decodePasword;
+	}
+
+	public void setDecodePasword(String decodePasword) {
+		this.decodePasword = decodePasword;
+	}
+
+	public Integer getCaCheck() {
+		return caCheck;
+	}
+
+	public void setCaCheck(Integer caCheck) {
+		this.caCheck = caCheck;
+		if (caCheck.equals(0)) {
+			caCheckString = "on";
+		}else if (caCheck.equals(1)) {
+			caCheckString = "off";
+		}
+	}
+
+	public String getCaCheckString() {
+		return caCheckString;
+	}
+
+	public void setCaCheckString(String caCheckString) {
+		this.caCheckString = caCheckString;
+		if (caCheckString.equals("on")) {
+			caCheck = 0;
+		}else if (caCheckString.equals("off")) {
+			caCheck = 1;
+		}
+	}
+
+	public String getAliasName() {
+		return aliasName;
+	}
+
+	public void setAliasName(String aliasName) {
+		this.aliasName = aliasName;
+	}
+	
+}
