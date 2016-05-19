@@ -9,7 +9,8 @@
 		<li><a href="$!{contextPath}/function">资源管理</a></li>
 		<li><a href="$!{contextPath}/purview">权限管理</a></li>
 		<li class="active"><a href="$!{contextPath}/role">角色管理</a></li>
-		<li><a href="$!{contextPath}/user">用户管理</a></li>
+		<li><a href="#springUrl('')/users">用户管理</a></li>
+		<li><a href="$!{contextPath}/users234">用户管理234</a></li>
 		<li><a href="$!{contextPath}/dept">单位管理</a></li>
 	</ul>
 	

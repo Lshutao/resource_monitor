@@ -1,3 +1,4 @@
+
 <DIV id="navBar" title="userDemo">
 	<li><a href="#springUrl('')/">首页</a><span class="divider">/</span></li>
 	<li class="active">userDemo</li>
@@ -30,7 +31,7 @@
 			<th #sorting($!{userDemo} "updatedTime")>updatedTime</th>
 			<th #sorting($!{userDemo} "deletedTime")>deletedTime</th>
 			<th #sorting($!{userDemo} "deleted")>deleted</th>
-			<th>操作</th>
+			<th>操作2</th>
 		</tr>
 	</thead>
 	<tbody>
