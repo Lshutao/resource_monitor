@@ -1,7 +1,7 @@
 
 <DIV id="navBar" title="userDemo">
-	<li><a href="#springUrl('')/">用户首页</a><span class="divider">/</span></li>
-	<li class="active">userDemo</li>
+	<li><a href="#springUrl('')/">单位首页</a><span class="divider">/</span></li>
+	<li class="active">单位管理</li>
 </DIV>
 <form class="well form-search" name="userDemoListForm" action="/userDemo" method="POST">
 	<!-- 智能分页与排序 -->

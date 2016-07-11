@@ -4,23 +4,27 @@
 		<li class="active"><a href="#springUrl('')/">实时资源显示</a></li>
 	</ul>
 	
-	<a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-lock"></i>安全控制<span class="label label-info">5</span></a>
+	<a href="#resource-menu" class="nav-header" data-toggle="collapse"><i class="icon-lock"></i>资源管理</a>
+	<ul id="resource-menu" class="nav nav-list collapse">
+		<li><a href="$!{contextPath}/function">资源查看</a></li>
+		<li><a href="#springUrl('')/resource">资源配置</a></li>
+	</ul>
+	
+	
+	<a href="#accounts-menu" class="nav-header" data-toggle="collapse"><i class="icon-lock"></i>身份管理</a>
 	<ul id="accounts-menu" class="nav nav-list collapse">
-		<li><a href="$!{contextPath}/function">资源管理</a></li>
-		<li><a href="$!{contextPath}/purview">权限管理</a></li>
-		<li class="active"><a href="$!{contextPath}/role">角色管理</a></li>
 		<li><a href="#springUrl('')/users">用户管理</a></li>
-		<li><a href="$!{contextPath}/users234">用户管理234</a></li>
-		<li><a href="$!{contextPath}/dept">单位管理</a></li>
+		<li class="active"><a href="$!{contextPath}/role">角色管理</a></li>
+		<li><a href="#springUrl('')/dept">单位管理</a></li>
 	</ul>
 	
 	<a href="#legal-menu" class="nav-header" data-toggle="collapse"><i class="icon-cog"></i>系统设置</a>
 	<ul id="legal-menu" class="nav nav-list collapse">
 		<li><a href="$!{contextPath}/setting">参数设置</a></li>
-		<li><a href="$!{contextPath}/notice">通知公告</a></li>
 		<li><a href="$!{contextPath}/system/log">系统日志</a></li>
 		<li><a href="$!{contextPath}/system/status">系统状态</a></li>
 	</ul>
+	
 	<a href="$!{contextPath}/help" class="nav-header" ><i class="icon-question-sign"></i>系统帮助</a>
 	
 </div>

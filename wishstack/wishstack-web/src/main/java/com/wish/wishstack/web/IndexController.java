@@ -4,14 +4,19 @@
  */
 package com.wish.wishstack.web;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.wish.wishstack.domain.UserDemo;
+import com.wish.wishstack.domain.common.Page;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import com.wish.wishstack.service.UserDemoService;
 
 /**
  * 首页
@@ -25,18 +30,21 @@ public class IndexController{
 	@RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
 	public String index(HttpServletRequest request, Model view){
 	    view.addAttribute("contextPath", request.getContextPath());
-	    LOGGER.info("---first page----- ");
-	   
+	    LOGGER.info("拦截根目录 ");
 		return "login";
 	}
 	
-	@RequestMapping(value="tenantHomePage",method = {RequestMethod.GET, RequestMethod.POST})
+//	@RequestMapping(value="tenantHomePage",method = {RequestMethod.GET, RequestMethod.POST})
+//	public String adminIndex(HttpServletRequest request, Model view){
+//		LOGGER.info("准备显示首页");
+//		view.addAttribute("contextPath", request.getContextPath());
+//		LOGGER.info(request.getContextPath());
+//		return "mainFrame/frame";
+//		
+//	}
 	
-	public String adminIndex(HttpServletRequest request, Model view){
-		LOGGER.info("准备显示首页");
-		view.addAttribute("contextPath", request.getContextPath());
-		return "mainFrame/frame";
-		
-	}
+	
+	
+	
 }
 

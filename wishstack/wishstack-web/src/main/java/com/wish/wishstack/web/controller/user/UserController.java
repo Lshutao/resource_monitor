@@ -31,14 +31,7 @@ public class UserController{
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
     
 	@Resource 
-	private UserDemoService userDemoService;
-	
-//	@InitBinder
-//	public void initBinder(WebDataBinder binder, WebRequest request) {
-//		binder.registerCustomEditor(Date.class, new CustomDateEditor(true));
-//	}
-	
-
+	private UserDemoService userService;
 	
 	
 	/**
@@ -76,7 +69,7 @@ public class UserController{
 //			
 //			user.setId(userInCache.getId());
 //			user.setTenantId(userInCache.getTenantId());
-//			view.addAttribute("user", user);
+			view.addAttribute("user", user);		
 //			view.addAttribute("page", userService.getByPage(user, page));	
 			LOGGER.error("准备显示用户列表数据");
 		
@@ -99,7 +92,7 @@ public class UserController{
 	public String listLayout(UserDemo userDemo, Page<UserDemo> page, Model view) throws Exception{
 		try {
 			view.addAttribute("userDemo", userDemo);
-			view.addAttribute("page", userDemoService.selectPage(userDemo, page));			
+			view.addAttribute("page", userService.selectPage(userDemo, page));			
 		} catch (Exception e) {
 			LOGGER.error("失败:" + e.getMessage(), e);
 			throw e;
@@ -117,7 +110,7 @@ public class UserController{
 	public String edit(@PathVariable Integer id, Model view) throws Exception{
 		try {
 			if(id != null && id > 0) {
-				UserDemo userDemo = userDemoService.selectEntry(id);
+				UserDemo userDemo = userService.selectEntry(id);
 				if(userDemo == null) {
 //					return toJSON(Message.failure("您要修改的数据不存在或者已被删除!"));
 					return null;
@@ -142,7 +135,7 @@ public class UserController{
 	public @ResponseBody Message del(@PathVariable Integer id, Model view) throws Exception{
     	Message msg = null;
     	try {
-			int res = userDemoService.deleteByKey(id);
+			int res = userService.deleteByKey(id);
 			msg  = res > 0 ? Message.success() : Message.failure();
 		} catch (Exception e) {
 			LOGGER.error("失败:" + e.getMessage(),e);
@@ -161,7 +154,7 @@ public class UserController{
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public String view(@PathVariable Integer id, Model view) throws Exception{
 		try {
-			UserDemo userDemo = userDemoService.selectEntry(id);
+			UserDemo userDemo = userService.selectEntry(id);
 			if(userDemo == null) {
 				return null;
 			}
@@ -184,7 +177,7 @@ public class UserController{
 	public @ResponseBody Message save(UserDemo userDemo, Model view) throws Exception{
     	Message msg= null;
     	try {
-			int res = userDemoService.saveOrUpdate(userDemo);
+			int res = userService.saveOrUpdate(userDemo);
 			msg  = res > 0 ? Message.success() : Message.failure();
 		} catch (Exception e) {
 			LOGGER.error("失败:" + e.getMessage(), e);

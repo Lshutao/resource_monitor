@@ -13,6 +13,10 @@
     <name>wishstack-common</name>
     
     <dependencies>
+        <dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+		</dependency>
         <!-- favor logger -->
         <dependency>
 			<groupId>org.slf4j</groupId>
@@ -61,6 +65,7 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
         </dependency>
+        
 		
     </dependencies>
 </project>

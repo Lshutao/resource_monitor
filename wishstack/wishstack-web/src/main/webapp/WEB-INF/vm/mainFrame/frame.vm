@@ -3,7 +3,7 @@
 <HEAD>
 	<META http-equiv="Content-Type" content="" />
 	<META name="viewport" content="width=device-width, initial-scale=1.0">
-	<TITLE>资源实时监控系统</TITLE>
+	<TITLE>工业数据在线监控系统</TITLE>
 	<LINK href="$webUtils.getStaticFilePath('/css/bootstrap.min.css')" rel="stylesheet" type="text/css"/>
 	<LINK href="$webUtils.getStaticFilePath('/css/base.css')" rel="stylesheet" type="text/css"/>
 	<LINK href="$webUtils.getStaticFilePath('/css/page.css')" rel="stylesheet" type="text/css"/>
@@ -17,7 +17,6 @@
 <SCRIPT src="$webUtils.getStaticFilePath('/js/common/bootstrap.min.js')" type="text/javascript"></SCRIPT>
 <SCRIPT src="$webUtils.getStaticFilePath('/js/common/base.js')" type="text/javascript"></SCRIPT>
 <SCRIPT src="$webUtils.getStaticFilePath('/js/common/page.js')" type="text/javascript"></SCRIPT>
-
 
 </BODY>
 </HTML>

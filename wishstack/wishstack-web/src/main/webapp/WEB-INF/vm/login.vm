@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>wishstack</title>
+	<title>工业数据在线监控系统</title>
 	<link  href="$webUtils.getStaticFilePath('/css/bootstrap.min.css')" rel="stylesheet" type="text/css"/>
 	<link  href="$webUtils.getStaticFilePath('/css/base.css')" rel="stylesheet" type="text/css"/>
 	<link  href="$webUtils.getStaticFilePath('/css/page.css')" rel="stylesheet" type="text/css"/>
@@ -20,7 +20,7 @@
 	
 </head>
 <body id = "mainframe" class="admin cloud_login">
-	<img class="login_bg" src="/wishstack-web/img/login/login_bg.png"/>
+	<img class="login_bg" src="/wishstack-web/img/login/login_back.jpg"/>
 	<div class="login_logo">
 		<img class="login_logo_bg" src="/wishstack-web/img/login/login_logo_text.png"/>
 	</div>
@@ -66,8 +66,7 @@
 		<div id="ca_original" style="display:none;">${original}</div>
 	</div>
     	<div class="login_footer">
-    		2016 中国电子科技网络信息安全有限公司  版本所有<br>
-    		China Electronices Technology Cyber Security Co.,Ltd.
+    		2016 730工作室  版本所有<br>
     	</div>
 <script src="$webUtils.getStaticFilePath('/js/common/jquery.min.js')" type="text/javascript"></script>
 <script src="$webUtils.getStaticFilePath('/js/common/bootstrap.min.js')" type="text/javascript"></script>

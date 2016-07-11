@@ -2,65 +2,66 @@
  * Copyright (c) 2015 wish.com All rights reserved.
  * 本软件源代码版权归----所有,未经许可不得任意复制与传播.
  */
-package com.wish.wishstack.web.controller;
-import java.util.Date;
+package com.wish.wishstack.web.controller.dept;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.wish.wishstack.web.CustomDateEditor;
-import org.springframework.web.context.request.WebRequest;
-import org.springframework.stereotype.Controller;
+import com.wish.wishstack.domain.user.User;
 import com.wish.wishstack.domain.UserDemo;
 import com.wish.wishstack.domain.common.Message;
 import com.wish.wishstack.domain.common.Page;
 import com.wish.wishstack.service.UserDemoService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
- *userDemo controller层
- * @author ttx
- * @since 2015-06-16
+ *dept controller层
+ * @author lst
+ * @since 2016-07-11
  */
 @Controller
-@RequestMapping(value = "/userDemo")
-public class UserDemoController{
-	private static final Logger LOGGER = LoggerFactory.getLogger(UserDemoController.class);
-	@Resource private UserDemoService userDemoService;
+@RequestMapping(value = "/dept")
+public class DeptController{
 	
-	@InitBinder
-	public void initBinder(WebDataBinder binder, WebRequest request) {
-		binder.registerCustomEditor(Date.class, new CustomDateEditor(true));
-	}
+	private static final Logger LOGGER = LoggerFactory.getLogger(DeptController.class);
+    
+	@Resource 
+	private UserDemoService userService;
 	
+	
+
 	/**
-	 * 列表展示
-	 * @param userDemo 实体对象
+	 * 用户列表展示
+	 * @author zz
+	 * @param user 实体对象
 	 * @param page 分页对象
 	 * @return
 	 */
 	@RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
-	public String list(UserDemo userDemo, Page<UserDemo> page, Model view) throws Exception{
+	public String list(User user, Page<User> page, Model view, HttpServletRequest req) throws Exception{
 		try {
-			view.addAttribute("userDemo", userDemo);
-			view.addAttribute("page", userDemoService.selectPage(userDemo, page));			
+
+			view.addAttribute("user", user);		
+//			view.addAttribute("page", userService.getByPage(user, page));	
+			LOGGER.error("准备显示单位列表数据");
+		
 		} catch (Exception e) {
-			LOGGER.error("失败:" + e.getMessage(), e);
-			throw e;
-		}finally{
-		}	
-		return "userDemo/list";
+			LOGGER.error("查询单位失败:" + e.getMessage(), e);
+		}
+		return "dept/list";
 	}
+	
+	
 	
 	
 	/**
 	 * 列表展示
-	 * @param userDemo 实体对象
+	 * @param user实体对象
 	 * @param page 分页对象
 	 * @return
 	 */
@@ -68,7 +69,7 @@ public class UserDemoController{
 	public String listLayout(UserDemo userDemo, Page<UserDemo> page, Model view) throws Exception{
 		try {
 			view.addAttribute("userDemo", userDemo);
-			view.addAttribute("page", userDemoService.selectPage(userDemo, page));			
+			view.addAttribute("page", userService.selectPage(userDemo, page));			
 		} catch (Exception e) {
 			LOGGER.error("失败:" + e.getMessage(), e);
 			throw e;
@@ -86,7 +87,7 @@ public class UserDemoController{
 	public String edit(@PathVariable Integer id, Model view) throws Exception{
 		try {
 			if(id != null && id > 0) {
-				UserDemo userDemo = userDemoService.selectEntry(id);
+				UserDemo userDemo = userService.selectEntry(id);
 				if(userDemo == null) {
 //					return toJSON(Message.failure("您要修改的数据不存在或者已被删除!"));
 					return null;
@@ -111,7 +112,7 @@ public class UserDemoController{
 	public @ResponseBody Message del(@PathVariable Integer id, Model view) throws Exception{
     	Message msg = null;
     	try {
-			int res = userDemoService.deleteByKey(id);
+			int res = userService.deleteByKey(id);
 			msg  = res > 0 ? Message.success() : Message.failure();
 		} catch (Exception e) {
 			LOGGER.error("失败:" + e.getMessage(),e);
@@ -130,7 +131,7 @@ public class UserDemoController{
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public String view(@PathVariable Integer id, Model view) throws Exception{
 		try {
-			UserDemo userDemo = userDemoService.selectEntry(id);
+			UserDemo userDemo = userService.selectEntry(id);
 			if(userDemo == null) {
 				return null;
 			}
@@ -153,7 +154,7 @@ public class UserDemoController{
 	public @ResponseBody Message save(UserDemo userDemo, Model view) throws Exception{
     	Message msg= null;
     	try {
-			int res = userDemoService.saveOrUpdate(userDemo);
+			int res = userService.saveOrUpdate(userDemo);
 			msg  = res > 0 ? Message.success() : Message.failure();
 		} catch (Exception e) {
 			LOGGER.error("失败:" + e.getMessage(), e);

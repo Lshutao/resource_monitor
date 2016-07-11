@@ -28,8 +28,8 @@ import org.slf4j.LoggerFactory;
  * @since 2015-06-16
  */
 @Controller
-@RequestMapping(value = "/userDemo")
-public class UserDemoController{
+@RequestMapping(value = "/tenantHomePage")
+public class TenantHomeController{
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserDemoController.class);
 	@Resource private UserDemoService userDemoService;
 	
@@ -47,14 +47,16 @@ public class UserDemoController{
 	@RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
 	public String list(UserDemo userDemo, Page<UserDemo> page, Model view) throws Exception{
 		try {
-			view.addAttribute("userDemo", userDemo);
-			view.addAttribute("page", userDemoService.selectPage(userDemo, page));			
-		} catch (Exception e) {
+			LOGGER.info("准备显示租户首页");
+			view.addAttribute("tenantHomePage", userDemo);
+			view.addAttribute("page", userDemoService.selectPage(userDemo, page));
+		}catch (Exception e){
 			LOGGER.error("失败:" + e.getMessage(), e);
 			throw e;
 		}finally{
-		}	
-		return "userDemo/list";
+			
+		}
+		return "mainFrame/frame";
 	}
 	
 	
