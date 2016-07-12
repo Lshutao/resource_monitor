@@ -48,6 +48,8 @@ public class TenantHomeController{
 	public String list(UserDemo userDemo, Page<UserDemo> page, Model view) throws Exception{
 		try {
 			LOGGER.info("准备显示租户首页");
+			LOGGER.error("用户："+ userDemo);
+			LOGGER.error("service is" + userDemoService.selectPage(userDemo, page));
 			view.addAttribute("tenantHomePage", userDemo);
 			view.addAttribute("page", userDemoService.selectPage(userDemo, page));
 		}catch (Exception e){

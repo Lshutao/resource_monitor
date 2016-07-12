@@ -7,7 +7,7 @@ import com.wish.wishstack.domain.BaseQuery;
 public class Company extends BaseQuery {
 	private static final long serialVersionUID = 1L;
 	// 主键
-	private Integer id;
+	private String id;
 	// uuid
 	private String uuid;
 	// 公司启用状态
@@ -23,17 +23,17 @@ public class Company extends BaseQuery {
 	// 公司创建时间
 	private Date createdTime = new Date();
 	// 更新时间
-	private Date updateTime = new Date();
+	private Date updatedTime = new Date();
 	// 删除时间
 	private Date deletedTime = new Date();
 	// 删除状态
 	private Integer deleted = 0;
 	
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 	
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	

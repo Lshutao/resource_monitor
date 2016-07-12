@@ -16,10 +16,13 @@
 	<!-- 全局别名设置，在映射文件中只需写别名，而不必写出整个类路径 -->
 	<typeAliases>
 		<typeAlias type="com.wish.wishstack.domain.UserDemo" alias="userDemo"/>
+		<typeAlias type="com.wish.wishstack.domain.CompanyDomain" alias="CompanyDomain"/>
 	</typeAliases>
-
+	
 	<!-- 映射文件路径 -->
 	<mappers>
 		<mapper resource="sqlmap/UserDemo.xml" />
+		<mapper resource="sqlmap/CompanyDomain.xml" />
 	</mappers>
+
 </configuration>

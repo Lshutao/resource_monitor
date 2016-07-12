@@ -19,6 +19,15 @@ import com.wish.wishstack.domain.UserDemo;
 import com.wish.wishstack.domain.common.Message;
 import com.wish.wishstack.domain.common.Page;
 import com.wish.wishstack.service.UserDemoService;
+
+
+import com.wish.wishstack.domain.user.Company;
+import com.wish.wishstack.domain.CompanyDomain;
+import com.wish.wishstack.service.CompanyService;
+
+
+
+
 /**
  *dept controller层
  * @author lst
@@ -33,22 +42,30 @@ public class DeptController{
 	@Resource 
 	private UserDemoService userService;
 	
+	@Resource 
+	private CompanyService companyService;
+	
 	
 
 	/**
-	 * 用户列表展示
-	 * @author zz
-	 * @param user 实体对象
+	 * 单位列表展示
+	 * @author lst
+	 * @param company 实体对象
 	 * @param page 分页对象
 	 * @return
 	 */
 	@RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
-	public String list(User user, Page<User> page, Model view, HttpServletRequest req) throws Exception{
+	public String list(CompanyDomain company, Page<CompanyDomain> page, Model view, HttpServletRequest req) throws Exception{
 		try {
-
-			view.addAttribute("user", user);		
-//			view.addAttribute("page", userService.getByPage(user, page));	
 			LOGGER.error("准备显示单位列表数据");
+			LOGGER.error("company is "+ company);
+		
+			view.addAttribute("dept", company);
+			LOGGER.error("data is "+companyService.selectPage(company, page));
+			view.addAttribute("page", companyService.selectPage(company, page));
+//			view.addAttribute("company", company);		
+	//		view.addAttribute("page", userService.getByPage(user, page));	
+			
 		
 		} catch (Exception e) {
 			LOGGER.error("查询单位失败:" + e.getMessage(), e);
